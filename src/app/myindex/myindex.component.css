@@ -1,0 +1,18 @@
+div.content {
+    margin-left: 200px;
+    padding: 10px 16px;
+    height: 1000px;
+  }
+  .rowtable{
+      padding: 10px;
+  }
+  .fa-trash-o{
+    color: red;
+}
+.row{
+    padding: 5px 0px;
+}
+.heading{
+    color: brown;
+    vertical-align: middle;
+}

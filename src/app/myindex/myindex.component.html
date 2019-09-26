@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="content">
+
+            <div class=row>
+                    <div class="col-md-12">
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" #uname id="email" placeholder="Enter value" name="">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" #email id="email" placeholder="Enter email" name="">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" #phone id="email" placeholder="Enter phone" name="">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" #pass id="email" placeholder="Enter pass" name="">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary" (click)="onCreatUser(uname, email, phone, pass)">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+                <br>
+                <br>
+                <div class=row>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>email</th>
+                                <th>Pnone No</th>
+                                <th>Password</th>
+                                <th class="text-right text-danger">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users; index as i">
+                                <td>{{user.name}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.phone}}</td>
+                                <td>{{user.pass}}</td>
+                                <td><span class="close" (click)="onRemoveItem(i)"><i class="fa fa-trash-o"
+                                            aria-hidden="true"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br>
+                <div class=row>
+                    <div class="col-md-12">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <select class="form-control" (change)="getProductVale($event)">
+                                    <option value="default">Select Product</option>
+                                    <option>Mobile</option>
+                                    <option>Laptop</option>
+                                    <option>Desktop</option>
+                                    <option>Banner</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3" [ngSwitch]="selectproduct">
+                            <h4 class="heading" *ngSwitchDefault>Please Select product</h4>
+                            <h4 class="heading" *ngSwitchCase="'Mobile'">You Have Select Mobile</h4>
+                            <h4 class="heading" *ngSwitchCase="'Laptop'">You Have Select Laptop</h4>
+                            <h4 class="heading" *ngSwitchCase="'Desktop'">You Have Select Desktop</h4>
+                            <h4 class="heading" *ngSwitchCase="'Banner'">You Have Select Banner</h4>
+                        </div>
+                    </div>
+                </div>
+                <router-outlet></router-outlet>
+               
+        <!-- <app-rform></app-rform> -->
+    </div>
+
+</body>
+
+</html>

@@ -16,3 +16,6 @@ div.content {
     color: brown;
     vertical-align: middle;
 }
+.textfield{
+    display: flex;
+}

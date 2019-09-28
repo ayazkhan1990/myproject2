@@ -15,14 +15,18 @@ import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
 import { UiComponent } from './ui/ui.component';
 import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 const appRoutes: Routes=[
-  {path:'', component: HomeComponent},
+  {path:'', redirectTo: 'login', pathMatch: 'full'},
+  {path:'home', component: HomeComponent},
   {path:'myindex', component: MyindexComponent},
+  {path:'login', component: LoginComponent},
   {path:'contact', component: ContactComponent},
   {path:'product', component: ProductComponent},
   {path:'about', component: AboutComponent},
   {path:'rform', component: RformComponent},
-  {path:'ui', component: UiComponent}
+  {path:'ui', component: UiComponent},
+  {path:'**', component: PageNotFoundComponent}
 ]
 @NgModule({
   declarations: [
@@ -37,7 +41,8 @@ const appRoutes: Routes=[
     ProductComponent,
     HomeComponent,
     UiComponent,
-    LoginComponent
+    LoginComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
